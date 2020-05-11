@@ -1,0 +1,131 @@
+
+\documentclass[oneside]{diretrizes}            % Imprimir apenas frente
+%\documentclass[doubleside]{diretrizes}        % Imprimir frente e verso
+
+% Importações de pacotes
+\usepackage[alf, abnt-emphasize=bf, recuo=0cm, abnt-etal-cite=2, abnt-etal-list=0]{abntex2cite}  % Citações padrão ABNT
+\usepackage[utf8]{inputenc}                         % Acentuação direta
+\usepackage[T1]{fontenc}                            % Codificação da fonte em 8 bits
+\usepackage{graphicx}                               % Inserir figuras
+\usepackage{amsfonts, amssymb, amsmath}             % Fonte e símbolos matemáticos
+\usepackage{booktabs}                               % Comandos para tabelas
+\usepackage{verbatim}                               % Texto é interpretado como escrito no documento
+\usepackage{multirow, array}                        % Múltiplas linhas e colunas em tabelas
+\usepackage{indentfirst}                            % Endenta o primeiro parágrafo de cada seção.
+\usepackage{microtype}                              % Para melhorias de justificação?
+\usepackage[algoruled, portuguese]{algorithm2e}     % Escrever algoritmos
+\usepackage{float}                                  % Utilizado para criação de floats
+\usepackage{times}                                  % Usa a fonte Times
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{epic}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{pdfpages}
+\usepackage{subfig}
+\usepackage{listingsutf8}
+\usepackage{listings}\lstset{
+    columns=fullflexible, % para poder copiar código do PDF
+    numbers=left, 
+    frame=L,
+    morekeywords={*,...},
+    breaklines=true,
+    showstringspaces=false,
+    captionpos=b,
+    xleftmargin=0pt,
+    inputencoding=utf8,
+extendedchars=false}
+\usepackage{endnotes}
+\renewcommand\theendnote{\alph{endnote}}
+\renewcommand\makeenmark{\textsuperscript{\theenmark)}}
+\renewcommand\enoteformat{\setlength\parindent{12pt}\makebox[0pt][r]{\theenmark. \,}}
+\renewcommand\notesname{ }
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Overleaf}
+\lhead{Guides and tutorials}
+\rfoot{Página \thepage}
+
+% Inclui o preâmbulo do documento
+\include{elementos-pre-textuais/preambulo}
+
+\usepackage[a4paper, top=3.0cm, bottom=2.0cm, left=3.0cm, right=2.0cm]{geometry} %teste margem
+%\usepackage{titlesec} %teste margem
+
+\newcommand{\blue}[1]{\textcolor{blue}{#1}} % proposed
+\newcommand{\red}[1]{\textcolor{red}{#1}} % to be removed
+\newcommand{\green}[1]{\textcolor{green}{#1}} % to be discussed?
+\newcommand{\yellow}[1]{\textcolor{yellow}{#1}} % ????
+\newcommand{\magenta}[1]{\textcolor{magenta}{#1}} % warning - requires attention
+
+
+% Define as cores dos links e informações do PDF
+\makeatletter
+\hypersetup{
+    portuguese,
+    colorlinks,
+    linkcolor=black,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=black,
+    breaklinks=true,
+    pdftitle={\@title},
+    pdfauthor={\@author},
+    pdfsubject={\imprimirpreambulo},
+    pdfkeywords={abnt, latex, abntex, abntex2}
+}
+\makeatother
+
+% Redefinição de labels
+\renewcommand{\algorithmautorefname}{Algoritmo}
+\def\equationautorefname~#1\null{Equa\c c\~ao~(#1)\null}
+
+% Cria o índice remissivo
+\makeindex
+
+% Início do documento
+\begin{document}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing
+
+% Elementos pré textuais
+\pretextual
+\include{elementos-pre-textuais/capa}                   % Capa
+\include{elementos-pre-textuais/folhaRosto}             % Folha de rosto
+% \include{elementos-pre-textuais/folhaCatalografica}    % Gerado pela biblioteca
+% \include{elementos-pre-textuais/folhaAprovacao}       % Folha de aprovação
+\include{elementos-pre-textuais/dedicatoria}            % Dedicatória
+\include{elementos-pre-textuais/agradecimentos}         % Agradecimentos
+\include{elementos-pre-textuais/epigrafe}               % Epígrafe
+\include{elementos-pre-textuais/resumos}                % Resumo e Abstract
+\include{elementos-pre-textuais/listas}                 % Lista de Figuras, Quadros, Abreviaturas e Tabelas     
+
+\sumario
+
+\begin{OnehalfSpacing}
+
+    % Elementos textuais
+    \textual
+    \include{elementos-textuais/introducao}            
+    \include{elementos-textuais/resultados}
+    \include{elementos-textuais/conclusao}
+
+\end{OnehalfSpacing}
+
+% Elementos pós textuais
+\postextual
+
+\bibliography{referencias}       % Referências
+
+\begin{OnehalfSpacing}
+    \include{elementos-pos-textuais/apendices}         % Apêndices
+    \include{elementos-pos-textuais/anexos}            % Anexos
+\end{OnehalfSpacing}
+
+\printindex                                             % Índice remissivo
+
+\end{document}

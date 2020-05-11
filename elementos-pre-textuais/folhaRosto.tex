@@ -1,0 +1,44 @@
+%
+% Documento: FOLHA DE ROSTO
+%
+
+\makeatletter
+\begin{folhaderosto}
+	\thispagestyle{empty}%limpa estilo da pagina
+	
+    \begin{center}
+    
+		\small\textbf{\expandafter\uppercase\expandafter{\imprimirnomeautor}}\\
+		\vspace*{6.2 cm}%Espaço entre linhas
+		\normalsize\textbf{\expandafter\uppercase\expandafter{\imprimirtitulotb}}\\
+		
+    \end{center}
+	
+	\vspace*{2.35 cm}%Espaçamento entre linhas
+		    \large%tamanho da fonte 
+    		\hfill%Estica horizontamente  com espaços
+	    	\begin{minipage}{8 cm}%Minipagina
+	    		\begin{small} %Muda tamanho da fonte
+	    		\setlength{\baselineskip}{0.7\baselineskip}
+				
+		    	{Monografia apresentada ao Programa de {\imprimirprograma }
+		    	{\imprimirmodalidade} da {\imprimirinstituicao}{ - }{\imprimirdepartamento},
+		    	como parte dos requisitos necessários à obtenção do título de
+		    	{\imprimirgrau }.}				
+				
+				\end{small} %Muda tamanho da fonte
+		    \end{minipage}%%Minipagina
+
+		 \vspace*{2.35 cm}%Espaçamento entre linhas   	
+		\normalsize{Orientador: {\imprimirtitulacaoorientador }{ }{\imprimirorientador.}\\{
+		    	}\\ {\imprimirtitulacaocoorientador }{ }{\imprimircoorientador.}}
+
+		    \vspace*{3.65 cm}%Espaçamento entre linhas
+		    
+		    \begin{center} %Alinhamento centralizado
+		    	\normalsize %Muda tamanho da fonte
+	    		\textbf{\imprimirlocalapresentacao \\ \imprimirdataapresentacao}
+	    	\end{center}%Alinhamento centralizado
+
+\end{folhaderosto}
+\makeatother
